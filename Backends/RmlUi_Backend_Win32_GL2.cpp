@@ -156,7 +156,7 @@ void Backend::EventLoop(ShellIdleFunction idle_function)
 	// Loop on PeekMessage() / GetMessage() until exit has been requested.
 	while (running)
 	{
-		if (PeekMessage(&message, nullptr, 0, 0, PM_NOREMOVE))
+		while (PeekMessage(&message, nullptr, 0, 0, PM_NOREMOVE))
 		{
 			GetMessage(&message, nullptr, 0, 0);
 
